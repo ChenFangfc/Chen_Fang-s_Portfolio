@@ -1,0 +1,676 @@
+.App {
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animation classes */
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+/* Fallback for when animations fail to load */
+@media (prefers-reduced-motion: reduce) {
+  .Name, .UIUC, .about-section, .main_img, .projects, .contact, .project-item, .contact-content p {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Emergency fallback - ensure all content is visible after 3 seconds */
+.Name, .UIUC, .about-section, .main_img, .projects, .contact, .project-item, .contact-content p {
+  animation-fill-mode: both;
+}
+
+@keyframes emergency-show {
+  to { opacity: 1; transform: none; }
+}
+
+/* Apply emergency fallback */
+.container * {
+  animation: emergency-show 0s 3s forwards;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #28342e;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.App-header a {
+  margin: 0 2rem;
+  color: #f0f0f0;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.App-header a:hover {
+  background-color: rgba(97, 218, 251, 0.2);
+  color: #61dafb;
+  transform: translateY(-2px);
+}
+
+
+
+.container {
+  background-color: #28342e;
+  min-height: 100vh;
+  color: white;
+  font-size: 4em;
+  padding-top: 1px;
+  margin: 0;
+  padding-bottom: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Animation Styles */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.1;
+  animation: float-shapes 8s ease-in-out infinite;
+}
+
+.shape:nth-child(1) {
+  left: 10%;
+  top: 20%;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #61dafb, transparent);
+  border-radius: 50%;
+  animation-delay: 0s;
+  animation-duration: 12s;
+}
+
+.shape:nth-child(2) {
+  right: 15%;
+  top: 35%;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, transparent, #61dafb);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation-delay: 2s;
+  animation-duration: 10s;
+}
+
+.shape:nth-child(3) {
+  left: 20%;
+  bottom: 30%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #61dafb, transparent);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  animation-delay: 4s;
+  animation-duration: 14s;
+}
+
+.shape:nth-child(4) {
+  right: 25%;
+  bottom: 20%;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(45deg, transparent, #61dafb);
+  border-radius: 20%;
+  animation-delay: 1s;
+  animation-duration: 11s;
+}
+
+.shape:nth-child(5) {
+  left: 50%;
+  top: 10%;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #61dafb, transparent);
+  transform: rotate(45deg);
+  animation-delay: 3s;
+  animation-duration: 13s;
+}
+
+@keyframes float-shapes {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateY(-20px) rotate(90deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translateY(-30px) rotate(270deg);
+    opacity: 0.25;
+  }
+}
+
+/* Particle System */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  background: #61dafb;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: particle-float 6s linear infinite;
+}
+
+.particle:nth-child(1) {
+  left: 5%;
+  width: 3px;
+  height: 3px;
+  animation-delay: 0s;
+  animation-duration: 8s;
+}
+
+.particle:nth-child(2) {
+  left: 15%;
+  width: 2px;
+  height: 2px;
+  animation-delay: 1s;
+  animation-duration: 10s;
+}
+
+.particle:nth-child(3) {
+  left: 25%;
+  width: 4px;
+  height: 4px;
+  animation-delay: 2s;
+  animation-duration: 7s;
+}
+
+.particle:nth-child(4) {
+  left: 35%;
+  width: 2px;
+  height: 2px;
+  animation-delay: 3s;
+  animation-duration: 9s;
+}
+
+.particle:nth-child(5) {
+  left: 45%;
+  width: 3px;
+  height: 3px;
+  animation-delay: 4s;
+  animation-duration: 11s;
+}
+
+.particle:nth-child(6) {
+  left: 55%;
+  width: 2px;
+  height: 2px;
+  animation-delay: 0.5s;
+  animation-duration: 8s;
+}
+
+.particle:nth-child(7) {
+  left: 65%;
+  width: 4px;
+  height: 4px;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+
+.particle:nth-child(8) {
+  left: 75%;
+  width: 2px;
+  height: 2px;
+  animation-delay: 2.5s;
+  animation-duration: 9s;
+}
+
+.particle:nth-child(9) {
+  left: 85%;
+  width: 3px;
+  height: 3px;
+  animation-delay: 3.5s;
+  animation-duration: 7s;
+}
+
+.particle:nth-child(10) {
+  left: 95%;
+  width: 2px;
+  height: 2px;
+  animation-delay: 4.5s;
+  animation-duration: 12s;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.UIUC {
+  opacity: 0;
+  margin: 0;
+  margin-top: 0.1em;
+  font-size: 2rem;
+  animation: fadeInUp 1s ease-out 0.8s forwards;
+}
+
+.Name {
+  margin-bottom: 0.1em;
+  font-size: 6rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+/* Ensure content is visible if animations don't load */
+.Name {
+  animation: fadeInUp 1s ease-out 0.3s forwards, fallback-show 0s 2s forwards;
+}
+
+@keyframes fallback-show {
+  to {
+    opacity: 1;
+  }
+}
+
+.Name-typing {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 3px solid #61dafb;
+  white-space: nowrap;
+  animation: typing 2s steps(20) 1.3s forwards, blink 1s infinite 1.3s;
+  width: 0;
+}
+
+
+.projects {
+  margin-left: 3%;
+  margin-right: auto;
+  text-align: left;
+  font-size: 4rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 1s ease-out 0.5s forwards;
+}
+.contact {
+  margin-left: 3%;
+  margin-right: auto;
+  text-align: left;
+  font-size: 4rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 1s ease-out 0.3s forwards;
+}
+
+.about-section {
+  margin: 2rem 0;
+  flex: 1;
+  max-width: 1100px;
+  opacity: 0;
+  animation: fadeInLeft 1s ease-out 1.2s forwards;
+}
+
+.about-title {
+  text-align: left;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  margin-left: 3%;
+}
+
+
+.about-box {
+  max-width: 1000px;    
+  margin-left: 7%;
+  padding: 1.5rem;         
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 8px;     
+  text-align: left;        
+  line-height: 1.6;             
+  color: #f0f0f0;
+  font-size: 0.5em;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: 3%;
+  margin-right: 3%;
+  font-size: 0.4em;
+}
+
+.project-item {
+  background-color: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 4px solid #61dafb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  text-align: left;
+}
+
+.project-item:nth-child(1) {
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.project-item:nth-child(2) {
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.project-item:nth-child(3) {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+.project-item:nth-child(4) {
+  animation: fadeInUp 0.8s ease-out 0.8s forwards;
+}
+
+.project-item:nth-child(5) {
+  animation: fadeInUp 0.8s ease-out 1.0s forwards;
+}
+
+.project-item:nth-child(6) {
+  animation: fadeInUp 0.8s ease-out 1.2s forwards;
+}
+
+.project-item:nth-child(7) {
+  animation: fadeInUp 0.8s ease-out 1.4s forwards;
+}
+
+.project-item:nth-child(8) {
+  animation: fadeInUp 0.8s ease-out 1.6s forwards;
+}
+
+.project-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(97, 218, 251, 0.2);
+  background-color: rgba(255,255,255,0.12);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #61dafb;
+  margin: 0;
+}
+
+.project-date {
+  background-color: rgba(97, 218, 251, 0.2);
+  color: #61dafb;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.project-tech {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #f0f0f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+
+.inside-list {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  list-style-position: outside;
+  margin: 0;
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.inside-list li {
+  margin-bottom: 0.5rem;
+  color: #e0e0e0;
+}
+
+.contact-content {
+  font-size: 1.2rem;
+  margin-left: 3%;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-content p {
+  background-color: rgba(255,255,255,0.08);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 0;
+  border-left: 4px solid #61dafb;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.contact-content p:nth-child(1) {
+  animation: fadeInLeft 0.8s ease-out 0.2s forwards;
+}
+
+.contact-content p:nth-child(2) {
+  animation: fadeInLeft 0.8s ease-out 0.4s forwards;
+}
+
+.contact-content p:nth-child(3) {
+  animation: fadeInLeft 0.8s ease-out 0.6s forwards;
+}
+
+.contact-content p:hover {
+  background-color: rgba(255,255,255,0.12);
+  transform: translateX(5px);
+  border-left: 4px solid #ffffff;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: flex-start;   /* align tops */
+  gap: 1.5rem;  
+}
+
+.main_img {
+  flex: 0 0 auto;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 18%;
+  opacity: 0;
+  animation: fadeInRight 1s ease-out 1.2s forwards, float 3s ease-in-out 2.5s infinite;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(97, 218, 251, 0.3);
+}
+
+/* Responsive design for project images */
+@media (max-width: 768px) {
+  .project-image {
+    max-width: 100%;
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-image {
+    margin-top: 0.6rem;
+    border-radius: 6px;
+  }
+}
+
+.about-box a {
+  color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.about-box a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
