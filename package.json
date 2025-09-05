@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chenfangfc.github.io/CF_Portfolio",
+  "homepage": "https://ChenFangfc.github.io/Chen_Fang-s_Portfolio",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

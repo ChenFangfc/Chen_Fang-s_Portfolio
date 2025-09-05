@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/CF_Portfolio/static/css/main.2923b62b.css",
-    "main.js": "/CF_Portfolio/static/js/main.67893a56.js",
-    "static/js/453.ed3810f9.chunk.js": "/CF_Portfolio/static/js/453.ed3810f9.chunk.js",
-    "index.html": "/CF_Portfolio/index.html",
-    "main.2923b62b.css.map": "/CF_Portfolio/static/css/main.2923b62b.css.map",
-    "main.67893a56.js.map": "/CF_Portfolio/static/js/main.67893a56.js.map",
-    "453.ed3810f9.chunk.js.map": "/CF_Portfolio/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/Chen_Fang-s_Portfolio/static/css/main.2923b62b.css",
+    "main.js": "/Chen_Fang-s_Portfolio/static/js/main.3904d2c2.js",
+    "static/js/453.ed3810f9.chunk.js": "/Chen_Fang-s_Portfolio/static/js/453.ed3810f9.chunk.js",
+    "index.html": "/Chen_Fang-s_Portfolio/index.html",
+    "main.2923b62b.css.map": "/Chen_Fang-s_Portfolio/static/css/main.2923b62b.css.map",
+    "main.3904d2c2.js.map": "/Chen_Fang-s_Portfolio/static/js/main.3904d2c2.js.map",
+    "453.ed3810f9.chunk.js.map": "/Chen_Fang-s_Portfolio/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2923b62b.css",
-    "static/js/main.67893a56.js"
+    "static/js/main.3904d2c2.js"
   ]
 }
