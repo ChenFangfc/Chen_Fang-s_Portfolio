@@ -1,0 +1,101 @@
+.personal-page .page__title {
+  color: #123a73;
+}
+
+.personal-content {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.personal-lead {
+  margin: 1.2rem 0 0.8rem;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.personal-section {
+  display: flow-root;
+  margin-bottom: 2.6rem;
+}
+
+.personal-section > .personal-lead {
+  margin-top: 0;
+}
+
+.personal-section:first-of-type > .personal-lead {
+  margin-top: 1.2rem;
+}
+
+.personal-section:last-child {
+  margin-bottom: 0;
+}
+
+.personal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+  margin: 0;
+}
+
+.personal-gallery--single {
+  width: min(100%, 520px);
+}
+
+.personal-card {
+  margin: 0;
+  padding: 0.9rem;
+  border-radius: 14px;
+  border: 1px solid rgba(18, 58, 115, 0.12);
+  background: #f5f6f8;
+  box-shadow: 0 10px 22px rgba(18, 58, 115, 0.08);
+}
+
+.personal-card--logo {
+  padding: 0.6rem;
+}
+
+.personal-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgb(241.7, 242.5, 243.1);
+}
+
+.personal-card--logo img {
+  height: clamp(110px, 18vw, 150px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.personal-card figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #123a73;
+}
+
+.personal-card--no-caption figcaption {
+  display: none;
+}
+
+.personal-page a.personal-link {
+  color: #ae7921;
+  text-decoration: none;
+}
+
+.personal-page a.personal-link:hover,
+.personal-page a.personal-link:focus,
+.personal-page a.personal-link:focus-visible,
+.personal-page a.personal-link:active,
+.personal-page a.personal-link:visited {
+  color: #ae7921;
+  text-decoration: none;
+}
+
+@media (min-width: 57.8125em) {
+  .personal-page {
+    padding-left: 0;
+  }
+}

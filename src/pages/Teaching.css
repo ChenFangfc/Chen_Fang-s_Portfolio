@@ -1,0 +1,33 @@
+.teaching-page .page__title {
+  color: #123a73;
+}
+
+.teaching-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.teaching-item h3 {
+  margin-top: 0;
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #ff5f05;
+}
+
+.teaching-divider {
+  height: 1px;
+  background: rgb(241.7, 242.5, 243.1);
+  margin: 0.6em 0 0.9em;
+}
+
+.teaching-item + .teaching-item {
+  margin-top: 2.5em;
+}
+
+@media (min-width: 57.8125em) {
+  .teaching-page {
+    padding-left: 0;
+  }
+}
