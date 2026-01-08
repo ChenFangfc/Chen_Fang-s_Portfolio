@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function Researches() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) {
+      return;
+    }
+
+    const targetId = location.hash.slice(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+  }, [location.hash]);
+
   return (
     <div className="archive researches-page">
       <div className="page-content">
         <h1 className="page__title">Researches</h1>
-        <div className="research-item">
+        <div className="research-item" id="audio-text-guardrail">
           <div className="research-card">
             <div className="research-thumb">
               <img
@@ -90,7 +105,7 @@ function Researches() {
             </div>
           </div>
         </div>
-        <div className="research-item">
+        <div className="research-item" id="struct-rl">
           <div className="research-card">
             <div className="research-thumb">
               <img
@@ -173,7 +188,7 @@ function Researches() {
             </div>
           </div>
         </div>
-        <div className="research-item">
+        <div className="research-item" id="de-escalation">
           <div className="research-card">
             <div className="research-thumb">
               <img

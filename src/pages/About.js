@@ -88,17 +88,17 @@ function About() {
         </p>
         <ul className="about-list">
           <li>
-            <Link className="about-list-text" to="/researches">
+            <Link className="about-list-text" to="/researches#audio-text-guardrail">
               Audio - Text Guardrail
             </Link>
           </li>
           <li>
-            <Link className="about-list-text" to="/researches">
+            <Link className="about-list-text" to="/researches#struct-rl">
               Struct-RL: Structure-Aware Reinforcement Learning for Code Generation
             </Link>
           </li>
           <li>
-            <Link className="about-list-text" to="/researches">
+            <Link className="about-list-text" to="/researches#de-escalation">
               DE - Escalation Police Training Simulation Platform
             </Link>
           </li>
@@ -116,6 +116,7 @@ function About() {
           researcher. He was an exceptionally patient mentor, and I greatly benefited from his
           guidance.
         </p>
+        <h2 className="page__title about-section-title">Visitor Map</h2>
         <div className="about-clustrmaps-anchor" ref={clustrmapsAnchorRef}></div>
       </div>
     </div>
