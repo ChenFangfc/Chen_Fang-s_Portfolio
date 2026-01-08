@@ -80,7 +80,7 @@ function About() {
           trustworthy ML and AI safety, LLM agents, and computer vision.
         </p>
         <p>
-          I am seeking internship opportunities in software engineering for Summer 2026.
+        I plan to apply to Ph.D. programs in Fall 2026 for Fall 2027 entry.
         </p>
         <h2 className="page__title about-section-title">Recent Researches</h2>
         <p>
